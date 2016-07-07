@@ -71,7 +71,7 @@ setup(
     ],
     entry_points={
         'coreapi.codecs': [
-            'hal=hal_codec.HALCodec',
+            'hal=hal_codec:HALCodec',
         ]
     }
 )

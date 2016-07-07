@@ -1,6 +1,6 @@
 from collections import OrderedDict
-from coreapi.codecs.base import BaseCodec, _get_string, _get_dict, _get_bool
-from coreapi.compat import force_bytes, urlparse
+from coreapi.codecs.base import BaseCodec
+from coreapi.compat import force_bytes, string_types, urlparse
 from coreapi.compat import COMPACT_SEPARATORS, VERBOSE_SEPARATORS
 from coreapi.document import Document, Link, Array, Object, Field, Error
 from coreapi.exceptions import ParseError
@@ -8,7 +8,28 @@ import json
 import uritemplate
 
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
+
+
+def _get_string(item, key):
+    value = item.get(key)
+    if isinstance(value, string_types):
+        return value
+    return ''
+
+
+def _get_dict(item, key):
+    value = item.get(key)
+    if isinstance(value, dict):
+        return value
+    return {}
+
+
+def _get_bool(item, key):
+    value = item.get(key)
+    if isinstance(value, bool):
+        return value
+    return False
 
 
 def _is_array_containing_instance(value, datatype):
