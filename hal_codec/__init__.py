@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from coreapi.codecs.base import BaseCodec
-from coreapi.compat import force_bytes, urlparse
+from coreapi.compat import force_bytes, string_types, urlparse
 from coreapi.compat import COMPACT_SEPARATORS, VERBOSE_SEPARATORS
 from coreapi.document import Document, Link, Array, Object, Field, Error
 from coreapi.exceptions import ParseError
