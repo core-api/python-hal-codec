@@ -54,7 +54,7 @@ if sys.argv[-1] == 'publish':
 setup(
     name='hal-codec',
     version=version,
-    url='http://github.com/encode/hal-codec/',
+    url='http://github.com/core-api/python-hal-codec/',
     license='BSD',
     description='A HAL codec for Core API.',
     author='Tom Christie',
