@@ -8,7 +8,7 @@ import json
 import uritemplate
 
 
-__version__ = "0.0.3"
+__version__ = "1.0.0"
 
 
 def _get_string(item, key):
@@ -192,6 +192,7 @@ def _parse_document(data, base_url=None):
 
 class HALCodec(BaseCodec):
     media_type = "application/hal+json"
+    supports = ['encoding', 'decoding']
 
     def dump(self, document, indent=False, **kwargs):
         """
