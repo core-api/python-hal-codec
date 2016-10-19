@@ -8,7 +8,7 @@ import json
 import uritemplate
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 def _get_string(item, key):
@@ -214,10 +214,11 @@ class HALCodec(BaseCodec):
         data = _document_to_primative(document)
         return force_bytes(json.dumps(data, **options))
 
-    def load(self, bytes, base_url=None):
+    def load(self, bytes, **kwargs):
         """
         Takes a bytestring and returns a document.
         """
+        base_url = kwargs.get('base_url', None)
         try:
             data = json.loads(bytes.decode('utf-8'))
         except ValueError as exc:
