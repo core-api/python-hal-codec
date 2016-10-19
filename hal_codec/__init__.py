@@ -8,7 +8,7 @@ import json
 import uritemplate
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 def _get_string(item, key):
