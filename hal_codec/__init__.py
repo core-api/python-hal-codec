@@ -8,7 +8,7 @@ import json
 import uritemplate
 
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 
 def _get_string(item, key):
@@ -187,7 +187,7 @@ def _parse_document(data, base_url=None):
         if key not in ('_embedded', '_links'):
             content[key] = value
 
-    return Document(url, title, content)
+    return Document(url=url, title=title, content=content)
 
 
 class HALCodec(BaseCodec):
